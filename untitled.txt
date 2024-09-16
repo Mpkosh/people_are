@@ -1,0 +1,28 @@
+init_params = dict({'mu': [0.9092460318123954, 'normal', 0.909, 0.05, True, 0, 1],
+                     'a': [0.001802514427547769, 'normal', 0.0018, 0.005, True, 0, 1],
+                     'beta': [904.9228853554217, 'normal', 904, 50, True, 500, 1500],
+                     'I0': [0.2882931865945249, 'normal', 0.288, 0.05, True, 0, 1]})
+mcstat01, results = mh(obsData, init_params=init_params, rngseed=None,
+                     sampling_method='dram',
+                     display_pairwise_corr=False, n_sim1=nsim1, n_sim2=nsim2) # half of nsim1 is burned
+
+init_params = dict({'mu': [0.195, 'normal', 0.195, 0.01, True, 0, 1],
+                     'a': [0.001802514427547769, 'normal', 0.0018, 0.005, True, 0, 1],
+                     'beta': [904.9228853554217, 'normal', 904, 50, True, 500, 1500],
+                     'I0': [0.029, 'normal', 0.029, 0.005, True, 0, 1]})
+mcstat02, results = mh(obsData, init_params=init_params, rngseed=None,
+                     sampling_method='dram',
+                     display_pairwise_corr=False, n_sim1=nsim1, n_sim2=nsim2) # half of nsim1 is burned | /2
+
+init_params = dict({'mu': [0.9092460318123954, 'normal', 0.909, 0.1, True, 0, 1],
+                     'a': [0.001802514427547769, 'normal', 0.0018, 0.01, True, 0, 1],
+                     'beta': [904.9228853554217, 'normal', 904, 100, True, 500, 1500],
+                     'I0': [0.2882931865945249, 'normal', 0.288, 0.1, True, 0, 1]})
+mcstat03, results = mh(obsData, init_params=init_params, rngseed=None,
+                     sampling_method='dram',
+                     display_pairwise_corr=False, n_sim1=nsim1, n_sim2=nsim2) # half of nsim1 is burned | +
+
+init_params = dict({'mu': [0.195, 'normal', 0.195, 0.02, True, 0, 1],
+                     'a': [0.001802514427547769, 'normal', 0.0018, 0.01, True, 0, 1],
+                     'beta': [904.9228853554217, 'normal', 904, 100, True, 500, 1500],
+                     'I0': [0.029, 'normal', 0.029, 0.01, True, 0, 1]})
